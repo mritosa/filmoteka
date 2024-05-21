@@ -1,0 +1,15 @@
+        <div id="sadrzaj">
+            <form>
+                <label for="ime">Ime:</label>
+                <input type="text" name="ime" id="ime" />
+                <label for="prezime">Prezime:</label>
+                <input type="text" name="prezime" id="prezime" />
+                <label for="korime">Korisničko ime:</label>
+                <input type="text" name="korime" id="korime" disabled />
+                <label for="lozinka">Lozinka:</label>
+                <input type="password" name="lozinka" id="lozinka" />
+                <label for="email">E-mail:</label>
+                <input type="text" name="email" id="email" disabled /><br>
+            </form>
+            <button (click)="btnAzuriraj($event)">Spremi</button>
+        </div>

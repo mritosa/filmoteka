@@ -1,0 +1,24 @@
+
+<div id="prikazFavorita">
+        
+        <div *ngFor="let f of favoriti">
+          <img
+            src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{ f.slika }}"
+            width="200"
+            alt="slika"
+            (click)="prikaziDetalje(f.tmdb_id)"
+       
+          />
+          <p
+            (click)="prikaziDetalje(f.tmdb_id)"
+           
+          >
+            {{ f.naziv }}
+          </p>
+        </div>
+      </div>
+      <!--
+      <div id="prazniFavoriti" *ngIf="favoriti.length === 0">
+        <h3>Nemate favorita!</h3>
+      </div>
+      -->

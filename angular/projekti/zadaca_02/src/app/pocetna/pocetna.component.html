@@ -1,0 +1,26 @@
+
+
+<div class="pretrazivanje">
+ 
+<input type="text" name="trazilica" id="trazilica" placeholder="Pronađi seriju..." (keyup)="pretraziSerije($event)">
+<br>
+</div>
+<div class="stranicenje" >
+    <button *ngIf="page && page > 1" (click)="dohvatiSerijeStranicenje(1)"><<<</button>
+    <button *ngIf="page && page > 1" (click)="dohvatiSerijeStranicenje(page ? page - 1 : 1)"><</button>
+    <button *ngIf="page && total_pages" (click)="dohvatiSerijeStranicenje(page ? page : 1)">{{ page }}/{{ total_pages }}</button>
+    <button *ngIf="page && total_pages && total_pages > 500" (click)="dohvatiSerijeStranicenje(page ? page : 1)">{{ page }}/500</button>
+    <button *ngIf="page && total_pages && page < total_pages" (click)="dohvatiSerijeStranicenje(page ? page + 1 : 1)">></button>
+    <button *ngIf="page && total_pages && page < total_pages" (click)="dohvatiSerijeStranicenje(total_pages ? total_pages : 1)">>>></button>
+</div>
+<div class="tablica">
+<table border="1px" class="table">
+    <tr><th>Naziv serije</th><th>Opis</th></tr>
+    <tr *ngFor="let s of serije; trackBy:trackByFn">
+    <td>{{s.naziv}}</td>
+    <td>{{s.opis}}</td>
+    <td id="detaljiPolje"><button (click)="prikaziDetalje(s.id)" >Detalji</button></td>
+    </tr>
+    </table>
+</div>
+  

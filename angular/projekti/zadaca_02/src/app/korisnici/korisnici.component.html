@@ -1,0 +1,23 @@
+<div id="sviKorisnici">
+    <table border="1">
+      <tr>
+        <th>Id</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Lozinka</th>
+        <th>E-mail</th>
+        <th>Korisničko ime</th>
+        <th>Akcije</th>
+      </tr>
+      <tr *ngFor="let k of korisnici">
+        <td>{{ k.id }}</td>
+        <td>{{ k.ime }}</td>
+        <td>{{ k.prezime }}</td>
+        <td>{{ k.lozinka }}</td>
+        <td>{{ k.email }}</td>
+        <td>{{ k.korime }}</td>
+        <td><button (click)="obrisiKorisnika(k.korime)">Obriši</button></td>
+      </tr>
+    </table>
+  </div>
+  

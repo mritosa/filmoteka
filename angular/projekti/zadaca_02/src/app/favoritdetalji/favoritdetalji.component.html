@@ -1,0 +1,30 @@
+<div id="detaljiFavorita">
+    <div class="naslovSlika">
+      <img [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2/' + podaci?.serija[0]?.slika" width="200" alt="slika" />
+      <h1>{{ podaci?.serija[0]?.naziv }}</h1>
+    </div>
+    
+    <div class="detaljiTekst">
+      <p>{{ podaci?.serija[0]?.opis }}</p>
+      <div class="infoLinija">
+        <p>Broj epizoda: {{ podaci?.serija[0]?.broj_epizoda }}</p>
+        <p>Broj sezona: {{ podaci?.serija[0]?.broj_sezona }}</p>
+        <p>Popularnost: {{ podaci?.serija[0]?.popularnost }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <div id="detaljiSezona">
+    <div *ngFor="let s of podaci?.sezona" class="sezonaDetalji">
+      <h3>{{ s.naziv }}</h3>
+      <img [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2/' + s.slika" width="200" alt="slika" />
+      <div class="sezonaTekst">
+        <p>{{ s.opis }}</p>
+        <p>Broj sezone: {{ s.broj_sezone }}</p>
+        <p>Broj epizoda: {{ s.broj_epizoda_u_sezoni }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <button (click)="obrisiFavorita()">Obrisi favorita</button>
+  

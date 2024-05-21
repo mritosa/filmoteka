@@ -1,0 +1,25 @@
+
+<html>
+<body>
+  
+
+  <div class="navigacija">
+    <a routerLink="/pocetna" (click)="putanja='pocetna'">Početna</a>
+    <a routerLink="/favoriti" (click)="putanja='favoriti'" *ngIf="ulogaKorisnika">Favoriti</a>
+    <a routerLink="/korisnici" (click)="putanja='korisnici'" *ngIf="ulogaKorisnika == 1 ">Korisnici</a>
+    <a routerLink="/profil" (click)="putanja='profil'" *ngIf="ulogaKorisnika">Profil</a>
+    <a routerLink="/dokumentacija" (click)="putanja='dokumentacija'">Dokumentacija</a>
+    <a routerLink="/registracija" (click)="putanja='registracija'" *ngIf="ulogaKorisnika == 1">Registracija</a>
+    <a routerLink="/prijava" (click)="putanja='prijava'">Prijava</a>
+    <a routerLink="/dnevnik" (click)="putanja='dnevnik'" *ngIf="ulogaKorisnika == 1">Dnevnik</a>
+    <a routerLink="/pocetna" (click)="odjava()" *ngIf="ulogaKorisnika">Odjava</a>
+  </div>
+  
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+
+<footer>Matej Ritoša &copy; 2023</footer>
+</body>
+</html>
